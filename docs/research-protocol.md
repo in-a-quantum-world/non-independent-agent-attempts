@@ -9,7 +9,6 @@ sealing are protocol violations and must be reported as such in the
 paper.
 
 > Pending pre-seal amendments are listed at the end of
-> [paper-structure.md](paper-structure.md). Apply them, then seal.
 
 ---
 
