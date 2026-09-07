@@ -44,7 +44,7 @@ viable. The paper is written whichever way the data falls.
 
 ---
 
-## 2. Definition of 'Channel'
+## 2. Channel Defintion
 
 A channel is a concrete location in the execution environment that
 satisfies both of the following:
