@@ -11,22 +11,19 @@ came from prior state.
 
 ---
 
-## Documents in this repo
+## Documentation Outline
 
 | Document | Role |
 |---|---|
-| `README.md` (this file) | Project brief — the claim, the positioning, the plan |
-| [docs/research-protocol.md](docs/research-protocol.md) | Operational spec. DRAFT for sealing. Governs where documents conflict |
-| [docs/persistence-channel-taxonomy.md](docs/persistence-channel-taxonomy.md) | Channel inventory and canary design principles |
-| [docs/paper-structure.md](docs/paper-structure.md) | Paper blueprint. Carries pre-seal amendments to the protocol |
-| [docs/origin-session.md](docs/origin-session.md) | Recovered provenance: how the project was chosen, the literature sweep, the two incident forensics |
-
-Reading order for a newcomer: this file, then the protocol, then the
-paper structure.
+| `README.md` (this file) | Project brief |
+| [docs/research-protocol.md](docs/research-protocol.md) | Operational specification |
+| [docs/persistence-channel-taxonomy.md](docs/persistence-channel-taxonomy.md) | Channel inventory and design principles |
+| [docs/paper-structure.md](docs/paper-structure.md) | Paper blueprint. |
+| [docs/origin-session.md](docs/origin-session.md) | Provenance including how the project came about, inspiration, related works. |
 
 ---
 
-## Why it matters
+## Significance
 
 Capability evaluations score attempts as i.i.d. draws. The statistics
 they rely on — max-of-N, pass@k, "best attempt below threshold"
@@ -99,11 +96,14 @@ Prioritise the collection of the following metrics:
 - Disclosure: L0-L4 provenance level and the fraction of contaminated successes that are silent.
 
 Additional figures to include:
+- per-channel recovery rate
+- enabled vs disabled score distributions within each task family (to demonstrate the effect of cross state contamination)
+- turns-to-success distribution
+  
 
 
-## Already in hand
-
-Two contamination incidents with hash-verified forensics; the
+## Current backing evidence
+Two contamination incidents, verified - the
 solver-authored memory playbook (quarantined); a hardened replication
 protocol with one clean validation; the frozen-controller null model;
 pre-registration practice (sealed analysis plans) already established.
@@ -111,18 +111,12 @@ pre-registration practice (sealed analysis plans) already established.
 Forensic detail for all of these is in
 [docs/origin-session.md](docs/origin-session.md).
 
-## To run
 
-Channel taxonomy audit (~1 day); Experiment 1 (main new work, days of
-Claude Code sessions, no large compute); Experiments 2–3 follow from it.
-**Gating item: API cost estimate for the canary matrix.**
-
-## Deliverables
+## Plan for deliverables
 
 arXiv-style report + runnable canary audit kit any evaluator can apply
 to their own harness.
 
 ## Scope line (stated up front)
 
-This demonstrates a harness validity failure and a disclosure gap — not
-deliberate model exploitation. The paper says so plainly.
+This does not demonstrate deliberate model exploitation. The paper says so plainly.
