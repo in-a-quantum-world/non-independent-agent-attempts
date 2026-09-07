@@ -12,7 +12,7 @@ paper.
 
 ---
 
-## 1. Claim under test
+## 1. Claim 
 
 Repeated evaluation attempts by a stateful coding agent on shared
 infrastructure are not independent samples of the model. State written
