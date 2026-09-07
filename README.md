@@ -66,6 +66,41 @@ designed, and that is the point.
    three escalating probes (unprompted / open / direct). Report
    disclosure rate per level.
 
+## Practical Contribution - checking for independence
+
+I plan for my paper to not claim a universal percentage by which "better hygiene" improves agent evaluations, since the effect is inherently dependent on many variables: task, channel, harness, purpose, model (to name a few). The practical artefact should be something which is reproducible, which is why I have decided that it is an independence audit that an evaluator can run on their own setup, to verify that the agent completed the task independently by examining logs, previous eval attempts and results, channels and harness interference. Thus I present the solution as a product. 
+
+There are three results that are possible to be concluded from this (as well as a set of evidence):
+
+- Pass (verified): There is no evidence of contamination of this agent's state that could have led to an influenced and thus unoriginal result.
+- Fail (contamination detected): it is verifiably demonstrated that the agent accessed and made use of a previous state prior to this specific attempt.
+- Inconclusive: Factors that prevent a strong conclusion to be made about whether contamination occurred or not. This could be due to instrumentation, sample size or an unenumerated path.
+
+## Contamination Detector Workflow
+
+There are different levels of contamination checks, and all four of these must run:
+
+1. Enumerating persistence channels to confirm that the configuration on which this agent is operating is truly isolated.
+2. Running a small number of representative tasks with per-channel canaries.
+3. Only further investigating signals which are indicative of contamination, such as failing or suspicious channels. In this case, the number of representative tasks/trials being run can be increased.
+4. The status for the channel level as well as relevant evidence, alongside an evaluation and conclusion.
+
+## Metrics to be collected
+
+Prioritise the collection of the following metrics: 
+
+- Access rate: the fraction of trials in which the agent reads the channel under test
+- Recovery rate: The fraction in which the randomised secret or tracer appears at any point during the log.
+- Canary use rate: the numerb of times the protocol was used (primary metric for demonstrating contamination)
+- Exposure-without-use rate: Whent eh agent reads the state, but does not measurably act on it.
+- Task outcome: The score, or success, measured within each task family.
+- Efficiency: 
+- Order statistic distortion: Empirical pass@k or max-of-N under persistence versus the i.i.d. prediction or hardened arm.
+- Disclosure: L0-L4 provenance level and the fraction of contaminated successes that are silent.
+
+Additional figures to include:
+
+
 ## Already in hand
 
 Two contamination incidents with hash-verified forensics; the
