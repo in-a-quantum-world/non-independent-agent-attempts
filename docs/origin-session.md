@@ -1,10 +1,6 @@
-# Origin Session — Recovered Provenance
+# Origin Story: Recovered Provenance
 
-Material recovered from an earlier Claude Code session that is not
-captured in the brief, the protocol, the taxonomy, or the paper
-structure. Where this document and those four disagree, **they
-supersede this one** — it records how the project was chosen and what
-evidence already exists, not what the project now is.
+
 
 **Source transcript**
 `~/.claude/projects/-home-rucha-mujoco-lbx-rl-tasks-template-problems/dbe9483a-0eb2-4d98-9553-d76de75634ac.jsonl`
@@ -19,35 +15,12 @@ only as a deliberate decision.
 
 ---
 
-## 1. Why this project, and not the other two
 
-The session triaged three candidate papers from the same body of work.
-Recording the trail, because the rejected options are the discussion
-section and the sequel.
+## 2. Literature sweep 
 
-| Candidate | Claim | Verdict |
-|---|---|---|
-| **A. Concave contact is unrepresentable in MuJoCo** | Five representations; bounce-map contraction 0.165 ideal vs 1.361 best buildable; restitution honest only at ≤0.25 ms timestep; finite-mass impact map `v_out = a·v_in + b·v_r` with `b` free, not the textbook `1+a` | Evidence complete today, but the root cause (convex-hull collision) is documented behavior. A strong note, not a strong paper. Ship as a short companion; it is why the bed is flat |
-| **B. State carryover in agentic evaluation** | This project | Chosen. Two incidents were an incident report; the canary matrix turns it into a controlled experiment |
-| **C. What is actually hard for a frontier agent in physical control** | Public-simulator control tasks are saturated because the model is a *designer*; identification cliffs beat range-widening; author-infeasible choreography is solver-completable; budget asymmetry is the last defensible difficulty axis | Highest ceiling, weakest evidence: n=1 model, one plant family, no blinding. A blog post until a cross-model sweep is run. Natural sequel |
+Related works in the domain of contamination of agentic states, faithfulness and Chain of Thought.
 
-The decision test applied was the user's own: one falsifiable claim,
-evidence that survives a hostile reviewer, and a reason the reader's
-behavior changes afterward.
-
-Two objections were raised against B and both were resolved by the
-literature sweep in §2: "too shallow" (answered by naming the object of
-study as the *independence assumption*, not "do evals work") and
-"already covered" (answered by the crowded/empty map).
-
----
-
-## 2. Literature sweep — the crowded/empty map
-
-Run 2026-08-20. These are the URLs the positioning sections
-(protocol §9, paper structure §2) were built from.
-
-**Crowded — adversarial memory security.** Landing here would drown the
+**Adversarial memory security.** Landing here would drown the
 paper.
 
 - MPBench, memory-poisoning benchmark — https://arxiv.org/pdf/2606.04329
@@ -55,7 +28,7 @@ paper.
 - AgentLeak, privacy leakage between agents — https://arxiv.org/abs/2602.11510
 - Mnemonic Sovereignty, lifecycle survey — https://arxiv.org/html/2604.16548v1
 
-**Crowded — sandbagging and elicitation.** The mirror image of this
+**Sandbagging and elicitation.** The mirror image of this
 work: capability hidden from the eval, versus capability manufactured by
 it.
 
@@ -66,7 +39,7 @@ it.
 - METR GPT-4.5 evals — https://metr.org/blog/2025-02-27-gpt-4-5-evals/
 - Scheming safety cases — https://arxiv.org/pdf/2411.03336
 
-**The near-miss that proves the gap.**
+**Evidence of the Gap in the Literature**
 
 - *Stop Comparing LLM Agents Without Disclosing the Harness*,
   May 2026 — https://arxiv.org/abs/2605.23950
