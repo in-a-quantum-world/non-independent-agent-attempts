@@ -1,13 +1,14 @@
-# Attempts Are Not Independent
+# Attempts Are Not Independent!
 
 **Measuring State Carryover and Provenance Faithfulness in a Production Agent Harness**
 
-**One-sentence claim:** Repeated evaluation attempts by a stateful coding
-agent are samples of (model + accumulated state), not of the model; we
-measure which persistence channels carry state across nominally
-independent sessions, how much that carryover inflates max-over-attempts
-capability statistics, and whether the agent discloses that its success
-came from prior state.
+**Core idea:** Repeated evaluation attempts by a stateful coding
+agent are samples of (model + accumulated state), not of the model. We can
+measure which channels carry state across
+independent sessions and how much that carryover affects how successful the attempt was
+and whether the agent discloses that its success came from prior state.
+
+This project idea was inspired from some work I was doing regarding using Fable 5 to create a controller solution to a task and environment I had set up in MuJoCo. In the document logs, you will find the evidence that led me to this project. 
 
 ---
 
@@ -18,7 +19,7 @@ came from prior state.
 | `README.md` (this file) | Project brief |
 | [docs/research-protocol.md](docs/research-protocol.md) | Operational specification |
 | [docs/persistence-channel-taxonomy.md](docs/persistence-channel-taxonomy.md) | Channel inventory and design principles |
-| [docs/paper-structure.md](docs/paper-structure.md) | Paper blueprint. |
+| [docs/paper-structure.md](docs/paper-structure.md) | Paper blueprint |
 | [docs/origin-session.md](docs/origin-session.md) | Provenance including how the project came about, inspiration, related works. |
 
 ---
@@ -103,20 +104,10 @@ Additional figures to include:
 
 
 ## Current backing evidence
-Two contamination incidents, verified - the
+Two incidents, verified - the
 solver-authored memory playbook (quarantined); a hardened replication
 protocol with one clean validation; the frozen-controller null model;
 pre-registration practice (sealed analysis plans) already established.
 
 Forensic detail for all of these is in
 [docs/origin-session.md](docs/origin-session.md).
-
-
-## Plan for deliverables
-
-arXiv-style report + runnable canary audit kit any evaluator can apply
-to their own harness.
-
-## Scope line (stated up front)
-
-This does not demonstrate deliberate model exploitation. The paper says so plainly.
