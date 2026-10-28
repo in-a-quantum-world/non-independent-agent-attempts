@@ -2,13 +2,13 @@
 
 **Measuring State Carryover and Provenance Faithfulness in a Production Agent Harness**
 
-**Core idea:** Repeated evaluation attempts by a stateful coding
+The idea at the heart of this project Repeated evaluation attempts by a stateful coding
 agent are samples of (model + accumulated state), not of the model. We can
 measure which channels carry state across
 independent sessions and how much that carryover affects how successful the attempt was
 and whether the agent discloses that its success came from prior state.
 
-This project idea was inspired from some work I was doing regarding using Fable 5 to create a controller solution to a task and environment I had set up in MuJoCo. In the document logs, you will find the evidence that led me to this project. 
+This project idea was inspired from some work I was doing regarding using Fable 5 to create a controller solution to a task and environment I had set up in MuJoCo. The document logs include the work I did which led me to this project idea.
 
 ---
 
