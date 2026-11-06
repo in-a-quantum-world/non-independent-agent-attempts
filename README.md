@@ -1,12 +1,11 @@
 # Attempts Are Not Independent!
 
-**Measuring State Carryover and Provenance Faithfulness in a Production Agent Harness**
+**My theory is that there is state carryover when using agents for evals, and this can occur a lot more often than suspected**
 
-The idea at the heart of this project Repeated evaluation attempts by a stateful coding
-agent are samples of (model + accumulated state), not of the model. We can
-measure which channels carry state across
-independent sessions and how much that carryover affects how successful the attempt was
-and whether the agent discloses that its success came from prior state.
+The idea at the heart of this project is that repeated evaluation attempts by a stateful coding
+agent ('stateful' meaning that, it has a state at any given time, eg what eval attempt it is on, whether it was successful - something that we can actively keep track of and measure) are samples of the model AND an 'accumulated state', not of the model. 
+
+We can measure which channels carry state across independent sessions and how much that carryover affects how successful the attempt was and whether the agent discloses that its success came from prior state.
 
 This project idea was inspired from some work I was doing regarding using Fable 5 to create a controller solution to a task and environment I had set up in MuJoCo. The document logs include the work I did which led me to this project idea.
 
@@ -29,20 +28,25 @@ This project idea was inspired from some work I was doing regarding using Fable 
 Capability evaluations score attempts as i.i.d. draws. The statistics
 they rely on — max-of-N, pass@k, "best attempt below threshold"
 acceptance bars — are order statistics, which are maximally sensitive to
-carryover between attempts. If attempt N can read what attempt N−1
-wrote, the evaluation is a learning curve misread as a sample, and the
-max statistic drifts upward with attempt count regardless of underlying
-capability. This corrupts capability estimates in both directions:
-inflated solves (replayed work scored as fresh) and deflated difficulty
-calibration. No adversary is required; the harness features work as
-designed, and that is the point.
+carryover between attempts. 
+
+If attempt N can read what attempt N−1
+wrote, the evaluation is essentially a learning curve which we are misreading to be a sample, and the
+max statistic drifts upward with increasing attempts regardless of underlying
+capability of the model. 
+
+This corrupts capability estimates in both directions:
+inflated eval results, but also, decreased difficulty
+calibration. 
 
 ## Positioning
 
+These are related works that I often refer to:
+
 - Memory-security literature (poisoning, privacy leakage) covers the
-  **adversarial** case; this is the benign one.
+  **adversarial** case, whereas I am not focusing on whether the model is becoming adversarial.
 - Sandbagging literature covers the model underperforming its
-  capability; this is the **harness overperforming the model**.
+  capability 
 - The closest prior work (harness-disclosure position paper, May 2026)
   argues the thesis but runs no controlled measurement — it explicitly
   calls for one. This project answers that call.
@@ -109,5 +113,3 @@ solver-authored memory playbook (quarantined); a hardened replication
 protocol with one clean validation; the frozen-controller null model;
 pre-registration practice (sealed analysis plans) already established.
 
-Forensic detail for all of these is in
-[docs/origin-session.md](docs/origin-session.md).
